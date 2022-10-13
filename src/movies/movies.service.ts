@@ -14,6 +14,7 @@ export class MoviesService {
     }
 
     getOne(id:number):Movie {
+        console.log(typeof id)
         // return this.movies.find(movie => movie.id === parseInt(id))
         const movie = this.movies.find(movie => movie.id === id)
         if(!movie) {
@@ -26,7 +27,7 @@ export class MoviesService {
         // this.movies.filter(movie => movie.id !== +id);
         this.getOne(id);
        this.movies = this.movies.filter(movie => movie.id !== id);
-       
+        
     }
 
     create(movieData: CreateMovieDto){
